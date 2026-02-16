@@ -47,10 +47,12 @@ Use this as a fast decision map.
 **Examples**
 - post-publish temporary `Skill not found`
 - pending security scan visibility
+- `clawhub inspect ...` fails while `/skills/<slug>` page exists
 
 **Fix**
 - Backoff and retry with bounded attempts
 - Confirm success signal from initial publish step
+- Use `scripts/clawhub_inspect_safe.sh` for inspect retry + web fallback
 
 ## 7) Network/transient transport
 

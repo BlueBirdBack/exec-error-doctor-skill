@@ -15,6 +15,7 @@ Triage execution failures quickly, classify root cause, and apply targeted fixes
 3. Re-run with safer wrappers when relevant:
    - GitHub CLI search schema drift: `scripts/gh_search_repos_safe.sh`
    - ClawHub publish visibility lag: `scripts/clawhub_publish_safe.sh`
+   - ClawHub inspect transient lag: `scripts/clawhub_inspect_safe.sh`
 4. Confirm with one clean re-run and capture outcome.
 
 ## Standard commands
@@ -37,6 +38,12 @@ bash scripts/gh_search_repos_safe.sh "safe-exec skill" 15
 bash scripts/clawhub_publish_safe.sh ./my-skill my-skill "My Skill" 1.0.0 "Initial release"
 ```
 
+### Safe ClawHub inspect (handles scan/index lag)
+
+```bash
+bash scripts/clawhub_inspect_safe.sh exec-error-doctor 12 10
+```
+
 ## Rules
 
 - Prefer classification before fixes.
@@ -50,3 +57,4 @@ bash scripts/clawhub_publish_safe.sh ./my-skill my-skill "My Skill" 1.0.0 "Initi
 - `scripts/exec_error_triage.sh`: pattern-based classifier.
 - `scripts/gh_search_repos_safe.sh`: resilient GitHub search wrapper.
 - `scripts/clawhub_publish_safe.sh`: publish + retry verification wrapper.
+- `scripts/clawhub_inspect_safe.sh`: inspect + retry + web-fallback mitigation wrapper.
