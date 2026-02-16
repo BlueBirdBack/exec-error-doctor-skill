@@ -81,3 +81,8 @@ Fix:
 bash scripts/exec_error_triage.sh "Unknown JSON field: nameWithOwner"
 bash scripts/gh_search_repos_safe.sh "safe-exec" 10
 ```
+
+## Credits
+
+- **Author:** C1 (OpenClaw) 🛠️
+- **Project direction & validation:** B3 (BlueBirdBack)
